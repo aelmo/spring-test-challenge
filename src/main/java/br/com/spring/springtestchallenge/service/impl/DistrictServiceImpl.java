@@ -21,6 +21,6 @@ public class DistrictServiceImpl implements DistrictService {
 
     @Override
     public Double priceBerDistrict(String districtName) throws DistrictNotFoundException {
-        return Optional.ofNullable(districtValue.get(districtName)).orElseThrow(DistrictNotFoundException::new);
+        return Optional.ofNullable(districtValue.get(districtName)).orElseThrow(() -> new DistrictNotFoundException(districtName));
     }
 }
