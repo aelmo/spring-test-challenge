@@ -7,7 +7,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
-import org.springframework.web.context.request.WebRequest;
 
 import java.util.Objects;
 
@@ -26,10 +25,10 @@ public class PropertyApiControllerAdvice {
     }
 
     @ExceptionHandler(value = {DistrictNotFoundException.class})
-    public ResponseEntity<Object> handleDistrictNotFoundException(DistrictNotFoundException ex, WebRequest request) {
+    public ResponseEntity<Object> handleDistrictNotFoundException(DistrictNotFoundException ex) {
         var responseBody = new ErrorResponseDTO(
                 Objects.requireNonNull(ex.getMessage()),
-                request.getParameter("propDistrict"),
+                ex.getClass().getName(),
                 HttpStatus.NOT_FOUND.toString()
         );
 
