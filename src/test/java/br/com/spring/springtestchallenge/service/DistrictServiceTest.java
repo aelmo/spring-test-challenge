@@ -58,7 +58,7 @@ public class DistrictServiceTest {
     public void shouldReturnExceptionIfDistrictNotExists() {
         Exception exception = assertThrows(DistrictNotFoundException.class, () -> districtService.priceBerDistrict(propertyRequestDTO.getPropDistrict()));
 
-        String expectedMessage = "District Not Found";
+        String expectedMessage = "District not found: Teste.";
         String actualMessage = exception.getMessage();
 
         assertEquals(actualMessage, expectedMessage);
