@@ -1,0 +1,21 @@
+{
+  "propName": "Casa X",
+  "propDistrict": "Cachoeira",
+  "rooms": [
+    {
+      "roomName": "Cozinha",
+      "roomWidth": 10,
+      "roomLength": 5
+    },
+    {
+      "roomName": "Banheiro",
+      "roomWidth": 5,
+      "roomLength": 2
+    },
+    {
+      "roomName": "Sala",
+      "roomWidth": 20,
+      "roomLength": 10
+    }
+  ]
+}
